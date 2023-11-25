@@ -7,7 +7,7 @@ import {
   SaveOptions,
   Connection,
 } from 'mongoose';
-import { AbstractDocument } from './abstract.schema';
+import { AbstractDocument } from './abstarct.schema';
 
 export abstract class AbstractRepository<TDocument extends AbstractDocument> {
   protected abstract readonly logger: Logger;
@@ -17,10 +17,7 @@ export abstract class AbstractRepository<TDocument extends AbstractDocument> {
     private readonly connection: Connection,
   ) {}
 
-  async create(
-    document: Omit<TDocument, '_id'>,
-    options?: SaveOptions,
-  ): Promise<TDocument> {
+  async create(document: Omit<TDocument, '_id'>, options?: SaveOptions) {
     const createdDocument = new this.model({
       ...document,
       _id: new Types.ObjectId(),

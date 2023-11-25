@@ -1,0 +1,11 @@
+.git
+.gitignore
+
+dist.do
+node_modules
+
+*.env
+
+.eslintrc.js
+.prettierrc
+README.md
